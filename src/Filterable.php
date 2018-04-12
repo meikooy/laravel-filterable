@@ -25,11 +25,11 @@ trait Filterable
             $callback($filterer);
         }
 
-        $filterer->parseRequest();
-
         if ($this->searchable) {
             $filterer->setSearchableColumns($this->searchable);
         }
+
+        $filterer->parseRequest();
 
         foreach ($filterer->getGroups() as $group) {
             $query = $group->apply($query);
