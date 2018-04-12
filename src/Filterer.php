@@ -272,11 +272,11 @@ class Filterer
     }
 
     /**
-     * Undocumented function
+     * Get search filter group
      *
      * @return \Meiko\Filterable\Groups\OrGroup
      */
-    protected function addSearchGroup()
+    protected function getSearchGroup()
     {
         $group = new OrGroup;
         $value = 'lk=' . $this->getSearchQuery();
