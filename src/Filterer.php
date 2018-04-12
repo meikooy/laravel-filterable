@@ -264,7 +264,6 @@ class Filterer
 
         $this->groups[] = $group;
 
-
         if ($this->searchableColumns && $this->getSearchQuery()) {
             $this->groups[] = $this->getSearchGroup();
         }
