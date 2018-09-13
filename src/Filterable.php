@@ -25,6 +25,10 @@ trait Filterable
             $callback($filterer);
         }
 
+        if ($this->idColumns) {
+            $filterer->setIdColumn($this->idColumns);
+        }
+
         if ($this->searchable) {
             $filterer->setSearchableColumns($this->searchable);
         }
