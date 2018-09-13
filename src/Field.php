@@ -153,6 +153,7 @@ class Field
         $value = preg_replace('/^('.implode('|', array_keys($this->types)).')=/i', '', $this->value);
         $arrayTypes = ['bw', 'not-bw', 'in', 'not-in'];
         $likeTypes = ['lk', 'not-lk'];
+        $matchTypes = ['eq', 'ne'];
         $arraySeparator = '|';
 
         if ($value == 'null') {
@@ -171,6 +172,8 @@ class Field
             } else {
                 return $queryWildcard . $value . $queryWildcard;
             }
+        } elseif (in_array($this->getType(), $matchTypes) && $this->isIdKey()) {
+            $value = $this->getModelId($value);
         }
 
         return $value;
