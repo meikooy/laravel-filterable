@@ -26,7 +26,7 @@ trait Filterable
         }
 
         if ($this->idColumns) {
-            $filterer->setIdColumn($this->idColumns);
+            $filterer->addIdColumn($this->idColumns);
         }
 
         if ($this->searchable) {
