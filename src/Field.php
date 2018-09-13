@@ -136,7 +136,8 @@ class Field
         $primaryKeyName = $instance->getKeyName();
 
         if (is_callable($idResolver)) {
-            $id = $idResolver($modelName, $id, $instance->getRouteKeyName());
+            $resolver = new $idResolver;
+            $id = $resolver->resolve($modelName, $id, $instance->getRouteKeyName());
         }
 
         return $instance->where($instance->getRouteKeyName(), $id)->firstOrFail()->$primaryKeyName;
