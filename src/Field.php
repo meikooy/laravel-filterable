@@ -140,7 +140,8 @@ class Field
             $id = $resolver->resolve($modelName, $id, $instance->getRouteKeyName());
         }
 
-        return $instance->where($instance->getRouteKeyName(), $id)->firstOrFail()->$primaryKeyName;
+        $model = $instance->where($instance->getRouteKeyName(), $id)->first();
+        return ($model) ? $model->$primaryKeyName : null;
     }
 
     /**
@@ -161,7 +162,15 @@ class Field
         } elseif (in_array($this->getType(), $arrayTypes) || strpos($value, $arraySeparator) !== false) {
             $arr = [];
             foreach (explode($arraySeparator, $value) as $v) {
-                $arr[] = ($this->isIdKey()) ? $this->getModelId($v) : $v;
+                if ($this->isIdKey()) {
+                    $id = $this->getModelId($v);
+                    if ($id === null) {
+                        continue;
+                    }
+                    $arr[] = $id;
+                } else {
+                    $arr[] = $v;
+                }
             }
             return $arr;
         } elseif (in_array($this->getType(), $likeTypes)) {
