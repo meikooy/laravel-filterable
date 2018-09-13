@@ -131,8 +131,15 @@ class Field
             $className = $namespace . '\\' . $modelName;
         }
 
+        $idResolver = config('filterable.idResolver');
         $instance = new $className;
-        return $instance->where($instance->getRouteKeyName(), $id)->firstOrFail()->id;
+        $primaryKeyName = $instance->getKeyName();
+
+        if (is_callable($idResolver)) {
+            $id = $idResolver($modelName, $id, $instance->getRouteKeyName());
+        }
+
+        return $instance->where($instance->getRouteKeyName(), $id)->firstOrFail()->$primaryKeyName;
     }
 
     /**
