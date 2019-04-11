@@ -13,4 +13,9 @@ class User extends EloquentModel
         'name',
         'email',
     ];
+
+    protected $searchable = [
+        'name',
+        'email',
+    ];
 }

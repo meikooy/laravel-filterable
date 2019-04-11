@@ -17,11 +17,13 @@ class OrGroup extends Group
      */
     public function apply(Builder $query)
     {
-        foreach ($this->fields as $field) {
-            $query->orWhere(function ($query) use ($field) {
-                $query = $field->apply($query);
-            });
-        }
+        $query->where(function ($query) {
+            foreach ($this->fields as $field) {
+                $query->orWhere(function ($query) use ($field) {
+                    $query = $field->apply($query);
+                });
+            }
+        });
 
         return $query;
     }

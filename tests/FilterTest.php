@@ -18,4 +18,16 @@ class FilterTest extends TestCase
 
         $this->assertEquals($randomUser->name, $users->first()->name);
     }
+
+    public function testFilterByNameAndSearch()
+    {
+        $users = Factory::times(20)->create(User::class);
+        $randomUser = $users->random();
+
+        $this->get('/users?name='.$randomUser->name.'&_q='.$randomUser->email);
+
+        $users = User::filters()->get();
+
+        $this->assertEquals($randomUser->name, $users->first()->name);
+    }
 }
