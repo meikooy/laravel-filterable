@@ -1,0 +1,894 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="robots" content="index, follow, all" />
+    <title>Meiko\Filterable\Filterer | API</title>
+
+            <link rel="stylesheet" type="text/css" href="../../css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="../../css/bootstrap-theme.min.css">
+        <link rel="stylesheet" type="text/css" href="../../css/sami.css">
+        <script src="../../js/jquery-1.11.1.min.js"></script>
+        <script src="../../js/bootstrap.min.js"></script>
+        <script src="../../js/typeahead.min.js"></script>
+        <script src="../../sami.js"></script>
+        <meta name="MobileOptimized" content="width">
+        <meta name="HandheldFriendly" content="true">
+        <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+    
+    
+    </head>
+
+    <body id="class" data-name="class:Meiko_Filterable_Filterer" data-root-path="../../">
+            <div id="content">
+        <div id="left-column">
+                <div id="control-panel">
+                <script>
+            $('option[data-version="'+window.projectVersion+'"]').prop('selected', true);
+        </script>
+        <form id="search-form" action="../../search.html" method="GET">
+            <span class="glyphicon glyphicon-search"></span>
+            <input name="search"
+                   class="typeahead form-control"
+                   type="search"
+                   placeholder="Search">
+        </form>
+    </div>
+
+                <div id="api-tree"></div>
+
+        </div>
+        <div id="right-column">
+                <nav id="site-nav" class="navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-elements">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="../../index.html">API</a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar-elements">
+                <ul class="nav navbar-nav">
+                    <li><a href="../../classes.html">Classes</a></li>
+                                            <li><a href="../../namespaces.html">Namespaces</a></li>
+                                        <li><a href="../../interfaces.html">Interfaces</a></li>
+                    <li><a href="../../traits.html">Traits</a></li>
+                    <li><a href="../../doc-index.html">Index</a></li>
+                    <li><a href="../../search.html">Search</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+                        <div class="namespace-breadcrumbs">
+            <ol class="breadcrumb">
+                <li><span class="label label-default">class</span></li>
+                        <li><a href="../../Meiko.html">Meiko</a></li><li class="backslash">\</li><li><a href="../../Meiko/Filterable.html">Filterable</a></li><li class="backslash">\</li><li>Filterer</li>
+            </ol>
+        </div>
+                <div id="page-content">
+                
+    <div class="page-header">
+        <h1>
+            Filterer
+                
+        </h1>
+    </div>
+
+    <p>    class
+    <strong>Filterer</strong>
+</p>
+
+        
+    
+
+            <div class="description">
+            <p>Main filterer class</p>                                </div>
+    
+    
+    
+            <h2>Properties</h2>
+
+            <table class="table table-condensed">
+                    <tr>
+                <td class="type" id="property_searchQuery">
+                                        protected                                        string
+                </td>
+                <td>$searchQuery</td>
+                <td class="last">Search query</td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type" id="property_sortables">
+                                        protected                                        array
+                </td>
+                <td>$sortables</td>
+                <td class="last">Sortables</td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type" id="property_sortableColumns">
+                                        protected                                        array
+                </td>
+                <td>$sortableColumns</td>
+                <td class="last">Sortable columns</td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type" id="property_searchableColumns">
+                                        protected                                        array
+                </td>
+                <td>$searchableColumns</td>
+                <td class="last">Searchable columns</td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type" id="property_groups">
+                                        protected                                        array
+                </td>
+                <td>$groups</td>
+                <td class="last">Filter groups</td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type" id="property_idColumns">
+                                        protected                                        array
+                </td>
+                <td>$idColumns</td>
+                <td class="last">ID columns</td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type" id="property_filterColumnCallbacks">
+                                        protected                                        array
+                </td>
+                <td>$filterColumnCallbacks</td>
+                <td class="last">Filter column callbacks</td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type" id="property_requiredColumns">
+                                        protected                                        array
+                </td>
+                <td>$requiredColumns</td>
+                <td class="last">Required filter columns</td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type" id="property_queryKey">
+                                        protected                                        string
+                </td>
+                <td>$queryKey</td>
+                <td class="last">Key for searching</td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type" id="property_sortKey">
+                                        protected                                        string
+                </td>
+                <td>$sortKey</td>
+                <td class="last">Key for sortables</td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type" id="property_ignorePrefix">
+                                        protected                                        string
+                </td>
+                <td>$ignorePrefix</td>
+                <td class="last">Ignore keys prefixed with _</td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type" id="property_ignoreKeys">
+                                        protected                                        array
+                </td>
+                <td>$ignoreKeys</td>
+                <td class="last">Ignore "include" and "page" keys</td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type" id="property_baseClassname">
+                                        protected                                        string
+                </td>
+                <td>$baseClassname</td>
+                <td class="last">Base classname</td>
+                <td></td>
+            </tr>
+            </table>
+
+    
+            <h2>Methods</h2>
+
+            <div class="container-fluid underlined">
+                    <div class="row">
+                <div class="col-md-2 type">
+                    array
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_parseSortable">parseSortable</a>(string $string)
+        
+                                            <p>Parse sortable strings</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    string
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_getSearchQuery">getSearchQuery</a>()
+        
+                                            <p>Get search query</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    array
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_getSortables">getSortables</a>()
+        
+                                            <p>Get sortables</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    array
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_getGroups">getGroups</a>()
+        
+                                            <p>Get filter groups</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    void
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_setSearchableColumns">setSearchableColumns</a>(array $columns)
+        
+                                            <p>Set searchable columns</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    void
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_setSortableColumns">setSortableColumns</a>(array $columns)
+        
+                                            <p>Set sortable columns</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    void
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_addSortable">addSortable</a>(string $column, int $direction)
+        
+                                            <p>Add sortable column</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    void
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_addFilterColumn">addFilterColumn</a>(string $column, callable $callback)
+        
+                                            <p>Add filter column with a callback</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    void
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_addIdColumn">addIdColumn</a>(string|array $column)
+        
+                                            <p>Add ID column</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    void
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_parseRequest">parseRequest</a>(<abbr title="Illuminate\Http\Request">Request</abbr> $request = null)
+        
+                                            <p>Parse HTTP request</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <a href="../../Meiko/Filterable/Groups/OrGroup.html"><abbr title="Meiko\Filterable\Groups\OrGroup">OrGroup</abbr></a>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_getSearchGroup">getSearchGroup</a>()
+        
+                                            <p>Get search filter group</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    void
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_checkForRequiredColumns">checkForRequiredColumns</a>(array $columns)
+        
+                                            <p>Check for required columns in filter</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    void
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_requireColumn">requireColumn</a>(string $column)
+        
+                                            <p>Require specific column in filter</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    void
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_setBaseClassname">setBaseClassname</a>(string $classname)
+        
+                                            <p>Set base classname to use against id-filters</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+            </div>
+
+
+        <h2>Details</h2>
+
+            <div id="method-details">
+                    <div class="method-item">
+                    <h3 id="method_parseSortable">
+        <div class="location">at         line 115</div>
+        <code>            protected        array
+    <strong>parseSortable</strong>(string $string)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Parse sortable strings</p>                                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>string</td>
+                <td>$string</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>array</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getSearchQuery">
+        <div class="location">at         line 131</div>
+        <code>                    string
+    <strong>getSearchQuery</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Get search query</p>                                                </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>string</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getSortables">
+        <div class="location">at         line 141</div>
+        <code>                    array
+    <strong>getSortables</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Get sortables</p>                                                </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>array</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getGroups">
+        <div class="location">at         line 151</div>
+        <code>                    array
+    <strong>getGroups</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Get filter groups</p>                                                </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>array</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_setSearchableColumns">
+        <div class="location">at         line 162</div>
+        <code>                    void
+    <strong>setSearchableColumns</strong>(array $columns)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Set searchable columns</p>                                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>array</td>
+                <td>$columns</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>void</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_setSortableColumns">
+        <div class="location">at         line 173</div>
+        <code>                    void
+    <strong>setSortableColumns</strong>(array $columns)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Set sortable columns</p>                                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>array</td>
+                <td>$columns</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>void</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_addSortable">
+        <div class="location">at         line 185</div>
+        <code>                    void
+    <strong>addSortable</strong>(string $column, int $direction)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Add sortable column</p>                                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>string</td>
+                <td>$column</td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td>int</td>
+                <td>$direction</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>void</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_addFilterColumn">
+        <div class="location">at         line 201</div>
+        <code>                    void
+    <strong>addFilterColumn</strong>(string $column, callable $callback)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Add filter column with a callback</p>                                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>string</td>
+                <td>$column</td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td>callable</td>
+                <td>$callback</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>void</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_addIdColumn">
+        <div class="location">at         line 212</div>
+        <code>                    void
+    <strong>addIdColumn</strong>(string|array $column)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Add ID column</p>                                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>string|array</td>
+                <td>$column</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>void</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_parseRequest">
+        <div class="location">at         line 231</div>
+        <code>                    void
+    <strong>parseRequest</strong>(<abbr title="Illuminate\Http\Request">Request</abbr> $request = null)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Parse HTTP request</p>                                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td><abbr title="Illuminate\Http\Request">Request</abbr></td>
+                <td>$request</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>void</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getSearchGroup">
+        <div class="location">at         line 279</div>
+        <code>            protected        <a href="../../Meiko/Filterable/Groups/OrGroup.html"><abbr title="Meiko\Filterable\Groups\OrGroup">OrGroup</abbr></a>
+    <strong>getSearchGroup</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Get search filter group</p>                                                </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><a href="../../Meiko/Filterable/Groups/OrGroup.html"><abbr title="Meiko\Filterable\Groups\OrGroup">OrGroup</abbr></a></td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_checkForRequiredColumns">
+        <div class="location">at         line 297</div>
+        <code>            protected        void
+    <strong>checkForRequiredColumns</strong>(array $columns)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Check for required columns in filter</p>                                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>array</td>
+                <td>$columns</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>void</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_requireColumn">
+        <div class="location">at         line 312</div>
+        <code>                    void
+    <strong>requireColumn</strong>(string $column)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Require specific column in filter</p>                                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>string</td>
+                <td>$column</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>void</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_setBaseClassname">
+        <div class="location">at         line 323</div>
+        <code>                    void
+    <strong>setBaseClassname</strong>(string $classname)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Set base classname to use against id-filters</p>                                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>string</td>
+                <td>$classname</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>void</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+            </div>
+
+    
+            </div>
+                <div id="footer">
+        Generated by <a href="http://sami.sensiolabs.org/">Sami, the API Documentation Generator</a>.
+    </div>
+
+        </div>
+    </div>
+    </body>
+
+</html>
