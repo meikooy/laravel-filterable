@@ -23,8 +23,8 @@ Use url parameters to easily sort, filter and search eloquent models.
     - [Id columns](#id-columns)
     - [Custom filters](#custom-filters)
   - [Searching](#searching)
-  - [Prerequisites](#prerequisites)
-  - [Usage](#usage-1)
+    - [Prerequisites](#prerequisites)
+    - [Usage](#usage-1)
 
 
 </p></summary></details>
@@ -232,7 +232,7 @@ http://localhost/api/posts?username=meikooy
 
 ## Searching
 
-## Prerequisites
+### Prerequisites
 
 To use the search, you first need configure the columns which can be searched.
 
@@ -258,7 +258,7 @@ class Post extends Model {
     ];
 }
 ```
-## Usage
+### Usage
 
 To search, use the `_q` url parameter.
 
