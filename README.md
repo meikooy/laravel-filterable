@@ -3,7 +3,7 @@
 [![Build Status](https://travis-ci.org/meikooy/laravel-filterable.svg?branch=master)](https://travis-ci.org/meikooy/laravel-filterable)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-This library enables you to easily sort, filter and search your eloquent models by using url parameters.
+Use url parameters to easily sort, filter and search eloquent models.
 
 [Class documentation](https://meikooy.github.io/laravel-filterable/)
 
