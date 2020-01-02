@@ -3,7 +3,7 @@
 [![Build Status](https://travis-ci.org/meikooy/laravel-filterable.svg?branch=master)](https://travis-ci.org/meikooy/laravel-filterable)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-This library enables you to easily sort, filter and search your eloquent models via url-parameters.
+This library enables you to easily sort, filter and search your eloquent models by using url parameters.
 
 ## Table of Contents
 <details><summary>Click to expand</summary><p>
@@ -48,7 +48,7 @@ return [
 ```
 ### Usage
 
-To enable filtering for your model, you need to apply the provided [Filterable](./src/Filterable.php) trait to your model.
+To enable usage for your model, you need to apply the provided [Filterable](./src/Filterable.php) trait to your model.
 
 ```php
 <?php
@@ -122,7 +122,7 @@ Fetch posts where the `title` column has text like `Lorem ipsum`
 http//localhost/api/posts?title=lk=Lorem ipsum
 ```
 
-Fetch posts where the `title` does is NOT like `Lorem ipsum`
+Fetch posts where the `title` is NOT like `Lorem ipsum`
 ```
 http//localhost/api/posts?title=nl=Lorem ipsum
 ```
@@ -157,7 +157,7 @@ To fix this, you can set custom `idResolver` (in `config/filterable.php`) to "de
 
 return [
     'namespace' => '\App\Models',
-    'idResolver' => App\Models\IdResolver::class // YourIdResolver has to have resolve() method
+    'idResolver' => App\Models\IdResolver::class // The class has to have resolve() method
 ];
 
 ```
@@ -187,7 +187,7 @@ class IdResolver
 If the provided comparison types are not enough or you wish to have some additional logic for the filtering process
 you can also create your own filters.
 
-Example. Users have one-to-many relation with posts. We need to filter posts by their creators username.
+Example: Users have one-to-many relation with posts. We need to filter posts by their creators username.
 
 ```php
 <?php
