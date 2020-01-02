@@ -5,6 +5,8 @@
 
 This library enables you to easily sort, filter and search your eloquent models by using url parameters.
 
+[Class documentation](https://meikooy.github.io/laravel-filterable/)
+
 ## Table of Contents
 <details><summary>Click to expand</summary><p>
 
