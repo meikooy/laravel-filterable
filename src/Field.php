@@ -3,6 +3,7 @@
 namespace Meiko\Filterable;
 
 use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Support\Facades\Config;
 
 /**
  * Filter field
@@ -78,6 +79,13 @@ class Field
         $this->key = $key;
         $this->value = $value;
         $this->callback = $callback;
+
+        // change like and not like for postgres
+        $connection = Config::get('database.default');
+        if (Config::get('database.connections.' . $connection . '.driver') == 'pgsql') {
+            $this->types['lk'] = 'ilike';
+            $this->types['not-lk'] = 'not ilike';
+        }
     }
 
     /**
