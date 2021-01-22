@@ -24,15 +24,24 @@ class Sort
     protected $direction;
 
     /**
+     * Possible sort callback
+     *
+     * @var callable
+     */
+    protected $callback;
+
+    /**
      * Create new sortable column instance
      *
      * @param string $key
      * @param integer $direction
+     * @param callable|null $callback
      */
-    public function __construct(string $key, int $direction)
+    public function __construct(string $key, int $direction, callable $callback = null)
     {
         $this->key = $key;
         $this->direction = $direction;
+        $this->callback = $callback;
     }
 
     /**
@@ -43,6 +52,12 @@ class Sort
      */
     public function apply(Builder $query)
     {
-        return $query->orderBy($this->key, (($this->direction > 0) ? 'asc' : 'desc'));
+        $direction = ($this->direction > 0) ? 'asc' : 'desc';
+
+        if ($this->callback) {
+            return ($this->callback)($query, $direction);
+        }
+
+        return $query->orderBy($this->key, $direction);
     }
 }

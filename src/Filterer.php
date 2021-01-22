@@ -62,6 +62,13 @@ class Filterer
     protected $filterColumnCallbacks = [];
 
     /**
+     * Sort column callbacks
+     *
+     * @var array
+     */
+    protected $sortColumnCallbacks = [];
+
+    /**
      * Required filter columns
      *
      * @var array
@@ -187,8 +194,21 @@ class Filterer
         if ($this->sortableColumns && !in_array($column, $this->sortableColumns)) {
             throw new Exception('Column "'.$column.'" is not a sortable column');
         }
+        $callback = $this->sortColumnCallbacks[$column] ?? null;
 
-        $this->sortables[] = new Sort($column, $direction);
+        $this->sortables[] = new Sort($column, $direction, $callback);
+    }
+
+    /**
+     *  Add sort column with a callback
+     *
+     * @param string $column
+     * @param callable $callback
+     * @return void
+     */
+    public function addSortColumn(string $column, callable $callback)
+    {
+        $this->sortColumnCallbacks[$column] = $callback;
     }
 
     /**
