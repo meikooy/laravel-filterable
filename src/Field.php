@@ -27,7 +27,7 @@ class Field
     /**
      * Possible query callback
      *
-     * @var Closure
+     * @var callable
      */
     protected $callback;
 
@@ -72,9 +72,9 @@ class Field
      *
      * @param string $key
      * @param string $value
-     * @param Closure|null $callback
+     * @param callable|null $callback
      */
-    public function __construct($key, $value, $callback = null)
+    public function __construct(string $key, string $value, callable $callback = null)
     {
         $this->key = $key;
         $this->value = $value;
